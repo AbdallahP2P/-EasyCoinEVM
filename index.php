@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>EASY COIN EVM Wallet Pro - ETH, BNB, USDT</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- External library (ethers) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js">
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!-- الإعلان الأول -->
+    <div class="ad-banner">
+      <div class="ad-label">📢 Sponsored</div>
+      <div class="ad-content">
+        <div id="frame" style="width:100%;margin:auto;position:relative;z-index:99998;">
+          <iframe data-aa='2447496' src='//acceptable.a-ads.com/2447496/?size=Adaptive' style='border:0;padding:0;width:70%;height:auto;overflow:hidden;display:block;margin:auto'></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <h1>⚡ EASY COIN EVM Wallet Pro</h1>
+      <span class="badge">ETH · BNB · USDT</span>
+    </div>
+    <div class="sub">🔑 Create or import a wallet using a passphrase or private key</div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="generate" onclick="switchTab('generate')">🚀 Generate</button>
+      <button class="tab-btn" data-tab="import" onclick="switchTab('import')">📥 Import Key</button>
+      <button class="tab-btn" data-tab="mnemonic" onclick="switchTab('mnemonic')">🔑 Seed</button>
+    </div>
+
+    <!-- Generate Tab -->
+    <div id="tab-generate" class="tab-content active">
+      <div class="panel">
+        <div class="input-group">
+          <select id="coinSelect">
+            <option value="ethereum">⟠ Ethereum (ETH)</option>
+            <option value="bnb">🟡 BNB (BSC)</option>
+            <option value="usdt">💵 Tether (USDT)</option>
+          </select>
+          <input type="text" id="passphrase" placeholder="Enter passphrase..." value="">
+          <button class="btn" onclick="generateAddress()">🚀 Generate</button>
+          <button class="btn btn-secondary" onclick="randomPass()">🎲 Random</button>
+        </div>
+        <div class="status" id="statusMsg"><span>✅ Ready — Enter your passphrase</span></div>
+      </div>
+    </div>
+
+    <!-- Import Key Tab -->
+    <div id="tab-import" class="tab-content">
+      <div class="panel">
+        <div class="input-group">
+          <select id="importCoinSelect">
+            <option value="ethereum">⟠ Ethereum (ETH)</option>
+            <option value="bnb">🟡 BNB (BSC)</option>
+            <option value="usdt">💵 Tether (USDT)</option>
+          </select>
+          <input type="text" id="privateKeyInput" placeholder="Enter Private Key..." style="direction:ltr;text-align:left;">
+          <button class="btn btn-success" onclick="importWallet()">📥 Import</button>
+        </div>
+        <div class="status" id="importStatus"><span>📌 Enter private key to view wallet data</span></div>
+      </div>
+    </div>
+
+    <!-- Mnemonic Tab -->
+    <div id="tab-mnemonic" class="tab-content">
+      <div class="panel">
+        <div class="input-group">
+          <select id="mnemonicCoinSelect">
+            <option value="ethereum">⟠ Ethereum (ETH)</option>
+            <option value="bnb">🟡 BNB (BSC)</option>
+            <option value="usdt">💵 Tether (USDT)</option>
+          </select>
+          <input type="text" id="mnemonicInput" placeholder="Enter seed phrase (12 words)..." style="direction:ltr;text-align:left;">
+          <button class="btn btn-success" onclick="importMnemonic()">🔑 Import</button>
+        </div>
+        <button class="btn" onclick="generateMnemonic()" style="margin-top:12px;width:100%;">🎲 Generate Random Seed</button>
+        <div class="status" id="mnemonicStatus"><span>📌 Enter seed phrase to view wallet data</span></div>
+      </div>
+    </div>
+
+    <!-- Result Panel -->
+    <div class="result-grid" id="resultPanel">
+      <div class="result-row">
+        <span class="result-label">📌 Address</span>
+        <span class="result-value" id="addressDisplay">
+          <span style="color:#5a6a7a;">—</span>
+          <button class="copy-btn" onclick="copyText('addressDisplay')" style="margin-left:auto;">📋 Copy</button>
+        </span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">🔐 Private Key</span>
+        <span class="result-value" id="privateDisplay">
+          <span style="color:#5a6a7a;">—</span>
+          <button class="copy-btn" onclick="copyText('privateDisplay')" style="margin-left:auto;">📋 Copy</button>
+        </span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">💰 Balance</span>
+        <span class="result-value" id="balanceDisplay">
+          <span class="balance-pill" id="balancePill">0.00000000</span>
+          <button class="btn btn-refresh" onclick="fetchBalance()" style="padding:4px 14px;font-size:11px;min-width:unset;margin-left:auto;">🔄 Refresh</button>
+        </span>
+      </div>
+      <div class="result-row" id="mnemonicRow" style="display:none;">
+        <span class="result-label">🔑 Seed Phrase</span>
+        <span class="result-value" id="mnemonicDisplay">
+          <span style="color:#5a6a7a;">—</span>
+          <button class="copy-btn" onclick="copyText('mnemonicDisplay')" style="margin-left:auto;">📋 Copy</button>
+        </span>
+      </div>
+      <div class="result-row" id="networkRow" style="display:none;">
+        <span class="result-label">🌐 Network</span>
+        <span class="result-value" id="networkDisplay"><span style="color:#5a6a7a;">—</span></span>
+      </div>
+    </div>
+
+    <!-- إعلان صغير -->
+    <div class="ad-banner-small">
+      <script>
+        atOptions={'key':'84c0d4d473d26be183841117364dcef9','format':'iframe','height':250,'width':300,'params':{}};
+      </script>
+      <!-- سيتم وضع الإعلان هنا -->
+    </div>
+
+    <!-- History -->
+    <div class="history-area">
+      <div class="history-header">
+        <span>📋 Generated Addresses</span>
+        <span style="color:#5a6a7a;font-size:12px;" id="historyCount">0</span>
+      </div>
+      <div class="history-list" id="historyList">
+        <div style="padding:16px;text-align:center;color:#5a6a7a;font-size:13px;">No addresses yet</div>
+      </div>
+    </div>
+
+    <!-- إعلان سفلي -->
+    <div class="ad-banner" style="margin-top:18px;">
+      <div class="ad-label">📢 Sponsored</div>
+      <div class="ad-content">
+        <div id="container-8ccd7cad69161d7a8a63e0196cc2151e"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<div class="footer">
+  <div class="support">⚡ USDT : 0xacab870db00b47ce6878d083d3d02559b60458c5 </div><br><br>
+  <div class="support">⚡ Eth  : 0xacab870db00b47ce6878d083d3d02559b60458c5 </div><br><br>
+  <div class="support">⚡ BNB  : 0xacab870db00b47ce6878d083d3d02559b60458c5 </div>
+  <div style="margin-top:6px;font-size:11px;color:#3a4a5a;">All rights reserved © 2026</div>
+  
+  <!-- أيقونات GitHub -->
+  <div class="social-links">
+    <a href="https://github.com/AbdallahP2P/-EasyCoinEVM/" target="_blank" aria-label="GitHub" class="social-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+      </svg>
+    </a>
+    <!-- أضف أيقونات أخرى هنا -->
+  </div>
+</div>
+
+  <!-- External JavaScript (في نهاية body) -->
+  <script src="script.js"></script>
+</body>
+</html>
