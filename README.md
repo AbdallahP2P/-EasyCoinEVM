@@ -1,2 +1,64 @@
-# -EasyCoinEVM
-​A lightweight Web3 wallet interface to create, import, and manage EVM-compatible wallets securely using passphrases or private keys.
+# ⚡ EasyCoin EVM Wallet
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/AbdallahP2P/-EasyCoinEVM)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&logoColor=white)](https://php.net)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org)
+
+> **A Decentralized Web-Based Wallet**  
+> Create or import your **ETH · BNB · USDT** wallet with one click, with the highest security and privacy standards.
+
+🔗 **Live Demo:** [https://easycoin.ink](https://easycoin.ink)
+
+---
+
+## 📖 About The Project
+
+**EasyCoin EVM Wallet** is a lightweight web application designed to provide a simple and secure way to interact with **EVM** (Ethereum Virtual Machine) networks such as Ethereum and BNB Smart Chain.
+
+The core idea is to enable users to:
+- **Create a new wallet** using a passphrase.
+- **Import an existing wallet** using a private key or seed phrase.
+- **View basic wallet data** (public address, private key, and balance).
+
+All cryptographic operations are performed **locally** in your browser (Client-Side), meaning your private keys never pass through any intermediary server, enhancing privacy and security.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+| :--- | :--- |
+| 🆕 **Create Wallet** | Instantly create a new wallet using your own passphrase. |
+| 🔑 **Import Wallet** | Restore your wallet using a Private Key or Seed Phrase. |
+| 📊 **View Balance** | Display current balance of supported assets (ETH, BNB, USDT). |
+| 🌐 **EVM Support** | Works with all Ethereum Virtual Machine compatible networks. |
+| 🎨 **User-Friendly UI** | Clean and simple design suitable for beginners and pros alike. |
+| 🛡️ **Local Security** | Your private keys are never stored or sent to any external server. |
+
+---
+
+## 🛠️ Technologies Used
+
+- **Backend / Server:** PHP 8.x (for local or hosted server).
+- **Frontend:** HTML5, CSS3, JavaScript (ES6).
+- **Cryptography & Blockchain Interaction:** Integrated Web3 libraries (ethers.js / web3.js).
+- **Temporary Storage:** LocalStorage (optional for session persistence).
+
+---
+
+## 📦 Local Installation & Setup (For Developers)
+
+Since the project uses `index.php`, you can run it easily via any web server that supports PHP:
+
+### Method 1: Using XAMPP / WAMP / MAMP
+1. Download and install [XAMPP](https://www.apachefriends.org/) (or the appropriate alternative for your OS).
+2. Copy the project folder to the `htdocs` folder (in XAMPP) or `www` (in WAMP).
+3. Start **Apache** and **MySQL** services (optional).
+4. Open your browser and visit: `http://localhost/-EasyCoinEVM/`.
+
+### Method 2: Using PHP Built-in Server (Easiest)
+1. Open **Command Prompt** or **Terminal** inside the project folder.
+2. Run the following command:
+   ```bash
+   php -S localhost:8000
