@@ -62,3 +62,29 @@ Since the project uses `index.php`, you can run it easily via any web server tha
 2. Run the following command:
    ```bash
    php -S localhost:8000
+
+---
+## ⚠️ Important Security Warning
+
+> **🚨 This project is for educational and experimental purposes only.**
+>
+> - **Responsibility:** Using this application to manage real funds is at your own full risk. The developers assume no liability for any loss of funds or private keys.
+> - **Confidentiality:** Never share your **Private Key** or **Seed Phrase** with anyone under any circumstances. Store them offline in a secure location.
+> - **Phishing:** Always verify you are on the official website. Beware of fake clones that may steal your keys.
+> - **Data Storage:** The application does not store your keys on any server. All operations are client-side. However, your browser's local storage may retain temporary data – clear it after each session if you are concerned.
+> - **Network Security:** Avoid using this tool on public or untrusted networks. Use a secure, private connection.
+> - **Testing:** We strongly recommend using this wallet only with small amounts of test funds, never with your main savings.
+> - **Backup:** Always keep a backup of your recovery phrase (seed) in a safe place. If you lose it, you will lose access to your wallet permanently.
+
+---
+
+## 📞 Contact & Support
+
+- **Website:** [https://easycoin.ink](https://easycoin.ink)
+- **GitHub Repository:** [https://github.com/AbdallahP2P/-EasyCoinEVM](https://github.com/AbdallahP2P/-EasyCoinEVM)
+- **Email:** [abdallahxdollar@gmail.com](mailto:abdallahxdollar@gmail.com)
+- **Telegram:** [@AzAaRpS](https://t.me/AzAaRpS)
+
+For bugs, suggestions, or general inquiries, feel free to reach out via email or Telegram. 
+
+   
