@@ -1,0 +1,9 @@
+# Force PHP language detection for all PHP files
+*.php linguist-language=PHP
+
+# Explicitly set index.php
+index.php linguist-language=PHP
+
+# Optionally, ignore certain files from language stats
+LICENSE linguist-vendored
+*.md linguist-vendored
