@@ -88,3 +88,57 @@ Since the project uses `index.php`, you can run it easily via any web server tha
 For bugs, suggestions, or general inquiries, feel free to reach out via email or Telegram. 
 
    
+---
+
+
+---
+
+## 💰 Support the Project
+
+If you find this project useful and would like to support its development, server costs, and future features, you can donate using the following cryptocurrencies:
+
+| Cryptocurrency | Address |
+| :--- | :--- |
+| **USDT (ERC20 / BEP20)** | `0xacab870db00b47ce6878d083d3d02559b60458c5` |
+| **ETH (ERC20)** | `0xacab870db00b47ce6878d083d3d02559b60458c5` |
+| **BNB (BEP20)** | `0xacab870db00b47ce6878d083d3d02559b60458c5` |
+
+> **⚠️ Important:** All addresses are the same wallet. Please double‑check before sending.
+
+---
+
+### 📱 Scan to Donate
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" style="padding: 20px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xacab870db00b47ce6878d083d3d02559b60458c5&margin=10" alt="USDT QR" width="150" height="150" style="border-radius: 12px; border: 2px solid #26a17b;">
+        <br>
+        <strong style="color: #26a17b; font-size: 18px;">🟢 USDT</strong>
+        <br>
+        <code style="font-size: 11px; word-break: break-all;">0xacab870db0...b60458c5</code>
+      </td>
+      <td align="center" style="padding: 20px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xacab870db00b47ce6878d083d3d02559b60458c5&margin=10" alt="ETH QR" width="150" height="150" style="border-radius: 12px; border: 2px solid #627eea;">
+        <br>
+        <strong style="color: #627eea; font-size: 18px;">🔵 ETH</strong>
+        <br>
+        <code style="font-size: 11px; word-break: break-all;">0xacab870db0...b60458c5</code>
+      </td>
+      <td align="center" style="padding: 20px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xacab870db00b47ce6878d083d3d02559b60458c5&margin=10" alt="BNB QR" width="150" height="150" style="border-radius: 12px; border: 2px solid #f0b90b;">
+        <br>
+        <strong style="color: #f0b90b; font-size: 18px;">🟡 BNB</strong>
+        <br>
+        <code style="font-size: 11px; word-break: break-all;">0xacab870db0...b60458c5</code>
+      </td>
+    </tr>
+  </table>
+</div>
+
+*Scan any QR code with your wallet app to send the corresponding token.*
+
+---
+
+**🙏 Thank you for your support! Every donation helps keep the project alive and improving.**
