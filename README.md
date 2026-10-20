@@ -83,7 +83,7 @@ Since the project uses `index.php`, you can run it easily via any web server tha
 - **Website:** [https://easycoin.ink](https://easycoin.ink)
 - **GitHub Repository:** [https://github.com/AbdallahP2P/-EasyCoinEVM](https://github.com/AbdallahP2P/-EasyCoinEVM)
 - **Email:** [abdallahxdollar@gmail.com](mailto:abdallahxdollar@gmail.com)
-- **Telegram:** [@AzAaRpS](https://t.me/AzAaRpS)
+- **Telegram:** [Abdallah](https://t.me/StrategyPs)
 
 For bugs, suggestions, or general inquiries, feel free to reach out via email or Telegram. 
 
